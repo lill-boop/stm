@@ -1,0 +1,4 @@
+﻿/* [PWM Sync] 启用TIM1更新中断 (在 TIM1_PWM_Init 末尾添加后执行此命令) */
+HAL_NVIC_SetPriority(TIM1_UP_TIM16_IRQn, 2, 0);  // 优先级2 (低于2kHz中断)
+HAL_NVIC_EnableIRQ(TIM1_UP_TIM16_IRQn);
+__HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
